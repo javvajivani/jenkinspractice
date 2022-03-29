@@ -1,0 +1,17 @@
+pipeline {
+    
+    agent any
+    stages{
+        stage('Verify GIT BRANCH'){
+            steps{
+                echo '$GIT_BRANCH'
+            }
+        }
+         stage('Goodbye World'){
+            steps{
+                echo "Goodbye World."
+            }
+        }
+    }
+    
+}
