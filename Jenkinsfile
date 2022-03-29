@@ -5,6 +5,7 @@ pipeline{
       
       steps{
       echo '$GIT_BRANCH'
+       sh "cd jenkinspractice && mvn clean install"
       }
     }
     stage('good bye'){
