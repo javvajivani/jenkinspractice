@@ -7,7 +7,12 @@ pipeline{
       echo '$GIT_BRANCH'
       }
     }
-    
+    stage('good bye'){
+      
+      steps{
+      echo 'goodbye'
+      }
+    }
   }
   
 }
