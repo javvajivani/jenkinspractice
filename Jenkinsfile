@@ -2,16 +2,21 @@ pipeline{
  agent any
   stages{
     stage('verift git branch'){
-      
       steps{
       echo "$GIT_BRANCH"
        sh "cd jenkinspractice && mvn clean install"
       }
     }
-    stage('good bye'){
-      
+    stage('Docker Build'){
       steps{
-      echo 'goodbye'
+      echo '------------------ Docker build started ---------------------'
+      
+     sh '''docker images -a
+     docker build -t jenkinspractice .
+     docker images -a
+     cd ..
+    '''
+      echo '------------------ Docker build Ended ------------------------' 
       }
     }
   }
