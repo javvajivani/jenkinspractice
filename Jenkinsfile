@@ -11,7 +11,7 @@ pipeline{
       steps{
       echo '------------------ Docker build started ---------------------'
      sh 'pwd'
-     sh 'cd jenkinspractice'
+     sh 'cd jenkinspractice/'
      sh 'pwd'
      sh '''docker images -a
      docker build -t jenkinspractice .
