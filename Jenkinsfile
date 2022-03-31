@@ -4,7 +4,7 @@ pipeline{
     stage('verift git branch'){
       
       steps{
-      echo '$GIT_BRANCH'
+      echo "$GIT_BRANCH"
        sh "cd jenkinspractice && mvn clean install"
       }
     }
