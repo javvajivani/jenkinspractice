@@ -24,8 +24,8 @@ pipeline{
    stage('Start test app') {
          steps {
             sh '''
-            pwd
-               ./scripts/test_container.sh
+            cd jenkinspractice
+            ./scripts/test_container.sh
             '''
          }
          post {
