@@ -25,7 +25,7 @@ pipeline{
          steps {
             sh '''
             cd jenkinspractice
-            chmod 777 jenkinspractice/scripts/test_container.sh
+            chmod 777 /scripts/test_container.sh
             ./scripts/test_container.sh
             '''
          }
