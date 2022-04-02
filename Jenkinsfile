@@ -11,10 +11,8 @@ pipeline{
       steps{
       echo '------------------ Docker build started ---------------------'
      sh 'pwd'
-     sh 'cd jenkinspractice/'
-     sh 'pwd'
      sh '''
-     # cd jenkinspractice/
+     cd jenkinspractice/
      docker images -a
      docker build -t jenkinspractice .
      docker images -a
@@ -24,13 +22,13 @@ pipeline{
       }
     }
    stage('Start test app') {
-         steps {
+       /*  steps {
             sh '''
             cd jenkinspractice
             chmod 777 /scripts/test_container.sh
             ./scripts/test_container.sh
             '''
-         }
+         } */
          post {
             success {
                echo "App started successfully :)"
