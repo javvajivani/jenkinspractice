@@ -24,10 +24,11 @@ pipeline{
    stage('Start test app') {
         steps {
             sh '''
-            # chmod 777 -R jenkinspractice
+            whoami
+            chmod 777 -R jenkinspractice
             cd jenkinspractice/
             pwd
-            scripts/test_container.sh
+            ./scripts/test_container.sh
             '''
          }
          post {
