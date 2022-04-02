@@ -13,7 +13,9 @@ pipeline{
      sh 'pwd'
      sh 'cd jenkinspractice/'
      sh 'pwd'
-     sh '''cd jenkinspractice/ docker images -a
+     sh '''
+     # cd jenkinspractice/
+     docker images -a
      docker build -t jenkinspractice .
      docker images -a
      cd ..
