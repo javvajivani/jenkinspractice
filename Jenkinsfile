@@ -24,6 +24,8 @@ pipeline{
    stage('Start test app') {
         steps {
             sh '''
+            cd jenkinspractice/
+            pwd
             ./scripts/test_container.sh
             '''
          }
