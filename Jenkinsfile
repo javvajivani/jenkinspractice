@@ -29,6 +29,7 @@ pipeline{
             chmod 777 -R jenkinspractice
             cd jenkinspractice/
             pwd
+            docker-compose up -d
             ./scripts/test_container.sh
             '''
          }
