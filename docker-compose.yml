@@ -1,0 +1,8 @@
+version: '3.8'
+services: 
+  jenkinspractice:
+    build: ./jenkinspractice
+    image: jenkinspractice
+    container_name: jenkinspractice
+    ports:
+        - "80:80"

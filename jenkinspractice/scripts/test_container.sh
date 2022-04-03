@@ -5,7 +5,7 @@ until [ "$started" = true ] || [[ ( "$count" == 3 ) ]]; do
   count=$((count+1))
   echo "[$STAGE_NAME] Starting container [Attempt: $count]"
 
-  testStart=$(curl --write-out '%{http_code}' --silent --output /dev/null http://localhost/jenkins/api/example/Vani)
+  testStart=$(curl --write-out '%{http_code}' --silent --output /dev/null http://localhost:80)
  
   echo "App TestStart ---> $testStart"
 

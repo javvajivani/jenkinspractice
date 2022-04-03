@@ -8,20 +8,21 @@ pipeline{
       }
     }
     stage('Docker Build'){
-      steps{
-      echo '------------------ Docker build started ---------------------'
-     sh 'pwd'
-     sh '''
-     cd jenkinspractice/
-     docker images -a
-     docker build -t jenkinspractice .
-     docker images -a
-     cd ..
-    '''
-      echo '------------------ Docker build Ended ------------------------' 
+      steps {
+         echo '------------------ Docker build started ---------------------'
+         sh 'pwd'
+         sh '''
+         cd jenkinspractice/
+         docker images -a
+         docker build -t jenkinspractice .
+         docker images -a
+         cd ..
+         '''
+         echo '------------------ Docker build Ended ------------------------' 
       }
     }
-   stage('Start test app') {
+
+  stage('Start test app') {
         steps {
             sh '''
             whoami
@@ -38,6 +39,14 @@ pipeline{
             failure {
                echo "App failed to start :("
             }
+         }
+      }
+      stage('Stop test app') {
+         steps {
+             echo '---------- stop test app stage. ---------------'
+             /* sh '''
+               docker-compose down
+            ''' */
          }
       }
   }
